@@ -1,0 +1,9 @@
+ var TabBoard=function(b,s,p,n,u,f){this.Box=b;this.Set=s;this.Unit=u;this.Page=0;this.Prev=p;this.Next=n;this.Size=0;this.Full=(typeof f=='undefined')?true:f;this.Over=false;this.Now=-1;var self=this;this.Array=new Array(); this.Add=function(o){this.Array[this.Array.length]=o;}
+ this.Auto=function(s){if(s){var self=this;if(this.Size==1)return;this.Inter=window.setInterval(function(){if(self.Over)return;if(self.Size-self.Now-1>0){self.Play(self.Now+1);}else{self.Play(0);}},s);}}
+ this.Start=function(){if(typeof this.Unit!='number')return;this.Box.onmouseover=this.Set.onmouseover=this.Prev.onmouseover=this.Next.onmouseover=function(){self.Over=true;}
+this.Box.onmouseout=this.Set.onmouseout=this.Prev.onmouseout=this.Next.onmouseout=function(){self.Over=false;}
+var vis=this.Box.offsetWidth<this.Unit?this.Unit:this.Box.offsetWidth;this.Page=parseInt(vis/this.Unit);this.Size=this.Full?Math.floor(this.Array.length/this.Page):Math.ceil(this.Array.length/this.Page);if(this.Size==0)this.Size=1; var str='';this.Set.innerHTML=str;for(var n=0;n<this.Size;n++){var tag=document.createElement("span");(function(){var i=n;tag.onclick=function(){self.Play(i);}})();this.Set.appendChild(tag);}
+this.Play();this.Prev.onclick=function(){if(self.Now!=0){self.Play(self.Now-1);}else{self.Play(self.Size-1);}}
+this.Next.onclick=function(){if(self.Size-self.Now-1>0){self.Play(self.Now+1);}else{self.Play(0);}}}
+ this.Play=function(n){var n=n?n:0;var arr=this.Array.slice(n*this.Page,(n+1)*this.Page); var tag=this.Set.getElementsByTagName("span");for(var i=0;i<tag.length;i++){tag[i].className="";};tag[n].className="active";this.Now=n; var str='';for(var i=0;i<arr.length&&i<this.Page;i++){str+='<td>'+arr[i]+'</td>';}
+self.Box.innerHTML='<table cellpadding="0" cellspacing="0" width="100%"><tr>'+str+'</tr></table>';}};

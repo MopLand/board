@@ -1,0 +1,33 @@
+
+.board_radio{ border:#eddfc5 solid 5px; background:#fff url(pic/bbsrido_left.gif) left center no-repeat; line-height:20px; font-size:12px; padding:5px 10px 10px 50px; overflow_:hidden; height:140px;}
+
+	.board_radio a{ color:#666666; text-decoration:none;}
+	.board_radio a:hover{color:#106aa9;}
+
+	/*
+		标题栏
+	*/
+	.board_radio_sub{ color:#666666; margin:0; padding:0; margin-bottom:10px; overflow:hidden; height:18px;}
+	
+		.board_radio_hot{ overflow:hidden; }
+	
+		.board_radio_dot{ display:inline; float:right; overflow:hidden; height:18px; text-align:right; }
+		
+			.board_radio_dot .prev { float_:left; display:inline-block; background:url(pic/cions.png) no-repeat -50px -20px; cursor:pointer; width: 24px; height:18px;}
+			.board_radio_dot .prev:hover{ background:url(pic/cions.png) no-repeat 0 -20px;}
+			
+			.board_radio_dot .next { display:inline-block; background: url(pic/cions.png) no-repeat -23px -20px; width: 24px; cursor: pointer; height: 18px;}
+			.board_radio_dot .next:hover{ background: url(pic/cions.png) no-repeat -73px -20px;}
+			
+			.board_radio_dot span { margin:0; padding:0; vertical-align:top;}			
+			.board_radio_dot span span{ display:inline-block; margin:8px 5px 0 0; background: url(pic/cions.png) no-repeat -15px -4px; cursor: pointer; padding:3px; height:5px; overflow:hidden;}
+			.board_radio_dot span span.active { background: url(pic/cions.png) no-repeat -4px -4px; }
+			
+	.board_radio_ani{ overflow:hidden; clear:both; background:url(pic/loader.gif) center center no-repeat; display:none; height:80%;}
+
+	.board_radio_box{ overflow:hidden; clear:both; width:100%;}
+	
+		.board_radio table{ width:100%; text-align:center;}
+		.board_radio table td{ text-align:center;}
+	
+		.board_radio table td img{ display:block; margin:0 auto; width:120px; height:90px; margin-bottom:5px; border:#ccc solid 1px;}
